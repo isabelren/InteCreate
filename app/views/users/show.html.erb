@@ -5,6 +5,10 @@
     <%= link_to 'Send Connection Request', friendships_path(:friend_id => @user), :method => :post %>
   </p>
   <%else%>
+    <p>
+      <strong>Email: </strong>
+      <%= @user.email %>
+    </p>
     <!--You are connected to <%= @user.name %>-->
   <% end %>
 <% end %>
