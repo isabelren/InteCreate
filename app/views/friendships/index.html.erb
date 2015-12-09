@@ -1,0 +1,36 @@
+<h1>Connections</h1>
+
+<ul>
+  <% @user.friendships.each do |friendship| %>
+      <%if friendship.friend.friends.exists?(current_user) %>
+      <li>
+      <%= link_to friendship.friend.name, friendship.friend %>
+      <%= link_to "(Remove)", friendship, :method => :delete%>
+      </li>
+      <%end%>
+  <% end %>
+</ul>
+
+<h1>Pending Connections</h1>
+<ul>
+  <% @user.friendships.each do |friendship| %>
+      <%if not(friendship.friend.friends.exists?(current_user)) %>
+      <li>
+      <%= link_to friendship.friend.name, friendship.friend %>
+      <%= link_to "(Remove)", friendship, :method => :delete%>
+      </li>
+      <%end%> 
+  <% end %>
+</ul>
+
+<h1>Friended by</h1>
+
+<ul>
+  <% @user.inverse_friends.each do |inverse_friend| %>
+    <li>
+      <%= link_to inverse_friend.name, inverse_friend %>
+      <% #link_to "(Remove)", friendship, :method => :delete%>
+    </li>
+  <% end %>
+</ul>
+

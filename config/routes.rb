@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  
+
   get 'welcome/index'
 
   resources :users
-
+  resources :friendships
   root 'welcome#index'
+
+  get '/browse' => 'users#browse'
+  get '/badbrowse' => 'users#badbrowse'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -11,6 +16,7 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+  patch '/users' => 'users#update'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

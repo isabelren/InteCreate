@@ -1,0 +1,54 @@
+<h1>Edit Profile</h1>
+
+<%= form_for @user, url: users_path, html: { multipart: true } do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<h2>Edit Statement</h1>
+  <div class="field">
+    <%= form.label :statement %><br>
+    <%= form.text_field :statement %>
+  </div>
+
+
+<h2>Edit Works</h2>
+
+  <div class="field">
+    <%= form.label :image1, "Image 1" %>
+    <%= form.file_field :image1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image2, "Image 2" %>
+    <%= form.file_field :image2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image3, "Image 3" %>
+    <%= form.file_field :image3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image4, "Image 4" %>
+    <%= form.file_field :image4 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image5, "Image 5" %>
+    <%= form.file_field :image5 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Update Profile"%>
+  </div>
+  
+<% end %>
