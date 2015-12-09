@@ -16,7 +16,7 @@
 <h2>Edit Statement</h1>
   <div class="field">
     <%= form.label :statement %><br>
-    <%= form.text_field :statement %>
+    <%= form.text_field :statement, class: 'form__input' %>
   </div>
 
 
@@ -48,7 +48,7 @@
   </div>
 
   <div class="actions">
-    <%= form.submit "Update Profile"%>
+    <%= form.submit "Update Profile", :class => 'form__btn'%>
   </div>
   
 <% end %>
