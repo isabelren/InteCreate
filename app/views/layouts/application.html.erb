@@ -10,7 +10,7 @@
   <div class="Main_Header">
     <h1>InteCreate</h1>
       <%if logged_in?%>
-        <%= link_to 'Home', root_path %> | <%= link_to "Profile", user_path(current_user) %> | <%= link_to 'See Connections', '/friendships' %> | <%= link_to "Browse", '/browse' %> | <%= link_to "Logout", '/logout' %>
+        <%= link_to 'Home', root_path %> | <%= link_to "Profile", user_path(current_user) %> | <%= link_to 'See Friends', '/friendships' %> | <%= link_to "Browse", '/browse' %> | <%= link_to "Logout", '/logout' %>
       <% else %>
         <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
       <%end%>
